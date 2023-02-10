@@ -1,0 +1,4 @@
+.divmain {  
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,24 @@
+.btn-learn,
+.btn-sign {
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  padding: 9px 25px;
+  display: inline-block;
+  font-size: 17px;
+  margin: 20px 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.btn-learn{
+    margin-left:28px;
+}
+
+.btn-sign:hover {
+  background-color: #bc2323;
+  color: #ffffff;
+}
+.btn-learn:hover {
+  background-color: #bc2323;
+  color: #ffffff;
+}
