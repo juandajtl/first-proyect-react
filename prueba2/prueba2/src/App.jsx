@@ -1,16 +1,13 @@
 import React, { useState,useEffect,useContext } from 'react'
-
 export const EjemploEvento = () => {
-
-
-  const [value, setValue] = useState('');
+  const [text, setText] = useState("");
   const [greatting, setGreatting] = useState('aqui veras tu tweet');
-  const [wordCount, setWordCount] = useState(255);
-  // const { text } = useContext(TextContext);
-  const handleEvent = () => {setGreatting(value )}
-function countWords(text) {
-  return text.trim().split(/\s+/).length;
-}
+  const [charCount, setCharCount] = useState(0);
+  const handleEvent = () => {setGreatting(text)}
+
+  useEffect(() => {
+    setCharCount(text.length);
+  }, [text]);
 
   return (
     <>
@@ -19,9 +16,9 @@ function countWords(text) {
       <h2>publica tus tweets</h2>
       <hr />
       <div>
-      <textarea  onChange={ (event)=> setValue(event.target.value)} id='txt-into' className='Txt-area' type="text"></textarea>
+      <textarea  placeholder='maximo de caracteres 255' onChange={ (event)=> setText(event.target.value)} id='txt-into' className='Txt-area' type="text"></textarea>
       </div>
-      <p >te quedan {wordCount} </p>
+      <p >te quedan {charCount} </p>
       <button onClick={handleEvent} className='btn-greatting'>publicar</button>
       <button onClick={handleEvent} className='btn-greatting'>archivar</button>
       <button onClick={handleEvent} className='btn-greatting'>mostrar archivos</button>
